@@ -44,7 +44,7 @@ export const TweetInput: React.FC = () => {
             .then(
               async (url) =>
                 await db.collection("posts").add({
-                  avator: user.photoUrl,
+                  avatar: user.photoUrl,
                   image: url,
                   text: tweetMsg,
                   timestamp: firebase.firestore.FieldValue.serverTimestamp(),
@@ -55,7 +55,7 @@ export const TweetInput: React.FC = () => {
       );
     } else {
       db.collection("posts").add({
-        avator: user.photoUrl,
+        avatar: user.photoUrl,
         image: "",
         text: tweetMsg,
         timestamp: firebase.firestore.FieldValue.serverTimestamp(),
@@ -70,7 +70,7 @@ export const TweetInput: React.FC = () => {
       <form onSubmit={sendTweet}>
         <div className={styles.tweet_form}>
           <Avatar
-            className={styles.tweet_avator}
+            className={styles.tweet_avatar}
             src={user.photoUrl}
             onClick={async () => await auth.signOut()}
           />
